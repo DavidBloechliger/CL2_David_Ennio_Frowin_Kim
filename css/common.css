@@ -16,11 +16,30 @@ body {
 .footer {
   height: 70px;
   color: #ffffff;
-  background-color: #2487c6;
+  background-color: black;
 }
 .content {
   flex-grow: 1;
   background-color: #f7f7f7;
   padding: 12px;
   margin: auto;
+}
+
+.nav{
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+}
+
+.nav-point{
+float: left;
+margin: 20px;
+color: white;
+text-decoration: none;
+}
+
+.logo-header{
+  float: right;
+  margin: 20px;
 }
