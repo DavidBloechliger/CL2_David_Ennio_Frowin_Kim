@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home</title>
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/game.css" />
+</head>
+
+<body>
+  <div class="header">
+    <div> 
+      <a class="logo-header">PhoneFlow</a> 
+    </div>
+    <div class="nav">
+      <div>
+        <a class="nav-point" href="./index.html">Home</a>
+        <a class="nav-point" href="./shop.html">Shop</a>
+        <a class="nav-point" href="./game.html">Gewinnspiel</a>
+      </div>
+  
+    </div>
+  </div>
+
+    <!-- Content -->
+  <div class="content">
+    <div class="ContentTop">
+      <div>
+        <h1>Gewinnspiel und Formular</h1>
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+      </div>
+    </div>
+
+    <div id="game-container">
+      <div id="game">
+        <div id="game-start">
+          <div class="startScreenText">Klicke, um das Spiel zu starten.</div>
+        </div>
+        <div id="game-background"></div>
+        <div id="game-dino"></div>
+        <div id="game-rock"></div>
+        <div id="game-score">0</div>
+      </div>
+
+      <div id="game-end" class="hidden">
+        <div id="game-winner" class="hidden">
+          ⭐ ⭐ ⭐ Glückwunsch ⭐ ⭐ ⭐ <br>
+          Du hast mehr als 100 Punkte erzielt.
+        </div>
+        Das Spiel ist zu Ende.<br>
+        Klicke auf das Spiel, um erneut zu spielen.
+      </div>
+    </div>
+
+    <div class="ContestForm">
+      <div>
+        <h2>Kontaktiere uns</h2>
+        <form action="">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Vorname</label>
+              <input type="text" id="fname" name="fname" value="Vorname">
+            </div>
+            <div class="form-group">
+              <label for="lname">Nachname</label>
+              <input type="text" id="lname" name="lname" value="Nachname">
+            </div>
+          </div>
+          <div class="message-form"> 
+            <label for="message">Nachricht (max. 1'000 Zeichen)</label>
+            <textarea id="message" name="message" rows="4" cols="50" placeholder="Nachricht (max. 1'000 Zeichen)"></textarea><br><br>
+          </div>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a class="logo-footer">PhoneFlow</a>
+    <ul class="social-links">
+      <li><a href="https://www.instagram.com/">Instagram</a></li>
+      <li><a href="https://twitter.com/">Twitter</a></li>
+      <li><a href="https://www.facebook.com/">Facebook</a></li>
+    </ul>
+  </div>
+
+  <script src="./js/game.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+.HomeHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.HomeHeaderText {
+    width: 50%;
+    margin: 0.5em;
+}
+
+.HomeHeaderImg {
+    width: 50%;
+    margin: 0.5em;
+}
+
+.SelectComponentTeaserOption {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border-radius: 30px;
+    border: 2px solid #ccc;
+    padding: 0 1em 0 1em;
+    width: 20%;
+}
+
+.CheckboxImg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.SelectComponentTeaserOptions {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 2em;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+.SelectComponentTeaser {
+    margin: 5em 0 5em 0;
+    text-align: center;
+}
+
+.bestsellerImg {
+    width: 100%;
+}
+
+.bestsellers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3em;
+}
+
+.bestsellerProduct {
+    text-align: center;
+    width: 30%;
+}
+
+.bestseller {
+    text-align: center;
+}
