@@ -12,7 +12,8 @@
 
 #game-container {
   width: 600px;
-  margin: auto;
+  background-color: blueviolet;
+  margin-bottom: 4em;
 }
 
 #game {
@@ -135,4 +136,35 @@
   top: 0;
   right: 0;
   margin: 12px;
+}
+
+.ContestForm {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1em;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 1em;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.message-form{
+  width: 100%;
+}
+
+#message{
+  width: 100%;
+}
+#fname, #lname{
+  width: 100%;
 }

@@ -12,34 +12,90 @@ body {
   flex-direction: column;
 }
 
-.header,
-.footer {
-  height: 70px;
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
   color: #ffffff;
   background-color: black;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto;
+  color: #ffffff;
+  background-color: black;
+  padding: 2em; 
 }
 .content {
   flex-grow: 1;
   background-color: #f7f7f7;
-  padding: 12px;
-  margin: auto;
+  padding: 2em;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 
 .nav{
-list-style-type: none;
-margin: 0;
-padding: 0;
-overflow: hidden;
+display: flex;
+align-items: center;
 }
 
-.nav-point{
-float: left;
-margin: 20px;
-color: white;
-text-decoration: none;
+.nav-point {
+  margin: 0 1em;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .logo-header{
-  float: right;
-  margin: 20px;
+  font-size: large;
+}
+
+.nav-point:hover,
+.logo-header:hover {
+  color: red;
+}
+
+.logo-footer{
+  font-size: large;
+  padding: 1em;
+}
+
+
+h1{
+  color: blue;
+  text-align: left;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.ContentTop{ 
+ margin-bottom: 4em;
+}
+
+.social-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-links li {
+  display: inline-block;
+  margin-left: 10px; /* Abstand zwischen den Links anpassen */
+}
+
+.social-links li a{
+  color: #ffffff;
+}
+
+.logo-footer:hover,
+.social-links li a:hover {
+  color: red; /* Ändere die Farbe entsprechend deiner Designpräferenz */
+}
+
+img{
+  width: 100%;
 }
