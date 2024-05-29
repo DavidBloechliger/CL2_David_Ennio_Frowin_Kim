@@ -140,6 +140,8 @@
 
 .ContestForm {
   width: 100%;
+  margin-top: 7em;
+  margin-bottom: 3em;
 }
 
 .form-row {
@@ -158,6 +160,10 @@ label {
   margin-bottom: 5px;
 }
 
+.email-form, .lname-form, .fname-form{
+  width: 30%;
+}
+
 .message-form{
   width: 100%;
 }
@@ -165,6 +171,16 @@ label {
 #message{
   width: 100%;
 }
-#fname, #lname{
+#fname, #lname, #e-mail{
   width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .email-form, .lname-form, .fname-form{
+      width: 100%;
+  }
+  .form-row{
+    flex-direction: column;
+  }
+
 }

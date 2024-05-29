@@ -35,8 +35,8 @@ body {
     flex-grow: 1;
     background-color: #ffffff;
     padding: 2em;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin: auto;
+    max-width: 900px;
 }
 
 .nav {
@@ -69,6 +69,13 @@ h1 {
     color: blue;
     text-align: left;
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 4em;
+}
+
+h2{
+    font-size: 2.5em;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
 }
 
 .ContentTop {
