@@ -40,12 +40,25 @@
 }
 
 .promotion {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 2em;
+    margin: auto;
+    max-width: 900px;
     margin-top: 7em;
     text-align: center;
     margin-bottom: 3em;
 }
 
-.PromotionHeading{
+.allProducts {
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 2em;
+    margin: auto;
+    max-width: 900px;
+}
+
+.PromotionHeading {
     margin-bottom: 3em;
 }
 

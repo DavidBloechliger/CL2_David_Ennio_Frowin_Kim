@@ -10,6 +10,7 @@ body {
 body {
     display: flex;
     flex-direction: column;
+    color: #010d26;
 }
 
 .header {
@@ -18,7 +19,7 @@ body {
     align-items: center;
     height: 5em;
     color: #ffffff;
-    background-color: black;
+    background-color: #010d26;
 }
 
 .footer {
@@ -27,17 +28,18 @@ body {
     align-items: center;
     height: auto;
     color: #ffffff;
-    background-color: black;
+    background-color: #010d26;
     padding: 2em;
 }
 
-.content {
+
+/*.content {
     flex-grow: 1;
     background-color: #ffffff;
     padding: 2em;
     margin: auto;
     max-width: 900px;
-}
+} */
 
 .nav {
     display: flex;
@@ -57,7 +59,7 @@ body {
 
 .nav-point:hover,
 .logo-header:hover {
-    color: red;
+    color: #69b3cc;
 }
 
 .logo-footer {
@@ -66,44 +68,76 @@ body {
 }
 
 h1 {
-    color: blue;
+    color: #aa01c2;
     text-align: left;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 4em;
 }
 
-h2{
+h2 {
     font-size: 2.5em;
     font-family: Helvetica, Arial, sans-serif;
     text-align: center;
+    color: #aa01c2;
 }
 
 .ContentTop {
-    margin-bottom: 4em;
+    flex-grow: 1;
+    background-color: #ffffff;
+    padding: 2em;
+    margin: auto;
+    max-width: 900px;
 }
 
-.social-links {
+.footer-links {
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-.social-links li {
+.footer-links li {
     display: inline-block;
     margin-left: 10px;
-    /* Abstand zwischen den Links anpassen */
 }
 
-.social-links li a {
+.footer-links li a {
     color: #ffffff;
 }
 
 .logo-footer:hover,
-.social-links li a:hover {
-    color: red;
-    /* Ändere die Farbe entsprechend deiner Designpräferenz */
+.footer-links li a:hover {
+    color: #69b3cc;
+}
+
+.button:hover {
+    background-color: #69b3cc;
 }
 
 img {
     width: 100%;
+}
+
+.button {
+    background-color: #3b74a5;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.SelectComponentTeaserBG {
+    background-color: #010d26;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 700px) {
+    h1 {
+        margin-top: 0;
+    }
 }
