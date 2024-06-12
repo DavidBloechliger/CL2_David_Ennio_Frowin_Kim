@@ -1,0 +1,15 @@
+<button id="play">
+play
+</button>
+
+<script> 
+
+const audio = new Audio("./JumpingSound.wav");
+ 
+
+document.getElementById("play").addEventListener("click", () => {
+  console.log("audio", audio)
+  audio.play();
+})
+
+</script>
