@@ -55,31 +55,32 @@
         </div> -->
 
         <div class="ContestForm">
-            <div>
-                <h2>Kontaktiere uns</h2>
-                <form action="">
-                    <div class="form-row">
-                        <div class="fname-form">
-                            <label for="fname">Vorname</label>
-                            <input type="text" id="fname" name="fname" placeholder="Vorname" minlength="3" />
-                        </div>
-                        <div class="lname-form">
-                            <label for="lname">Nachname</label>
-                            <input type="text" id="lname" name="lname" placeholder="Nachname" minlength="3" />
-                        </div>
-                        <div class="email-form">
-                            <label for="e-mail">E-Mail</label>
-                            <input type="text" id="e-mail" name="e-mail" placeholder="E-Mail" minlength="8" />
-                        </div>
-                    </div>
-                    <div class="message-form">
-                        <label for="message">Nachricht (max. 1'000 Zeichen)</label>
-                        <textarea id="message" name="message" rows="4" cols="50" placeholder="Nachricht (max. 1'000 Zeichen)" maxlength="1000"></textarea
-              ><br /><br />
+      <div>
+        <h2>Kontaktiere uns</h2>
+        <form action="">
+          <div class="form-row">
+            <div class="fname-form">
+              <label for="fname">Vorname</label>
+              <input type="text" id="fname" name="fname" placeholder="Vorname" minlength="3">
             </div>
-            <input type="submit" value="Submit" id="submit" class="button" />
-          </form>
-        </div>
+            <div class="lname-form">
+              <label for="lname">Nachname</label>
+              <input type="text" id="lname" name="lname" placeholder="Nachname" minlength="3">
+            </div>
+            <div class="email-form">
+              <label for="e-mail">E-Mail</label>
+              <input type="text" id="e-mail" name="e-mail" placeholder="E-Mail" minlength="8">
+            </div>
+          </div>
+          <div class="message-form">
+            <label for="message">Nachricht (max. 1'000 Zeichen)</label>
+            <textarea id="message" name="message" rows="4" cols="50" placeholder="Nachricht (max. 1'000 Zeichen)"
+              maxlength="1000"></textarea><br><br>
+          </div>
+          <div id="error-message" style="color: red;"></div> <!-- Hier wird die Fehlermeldung eingefügt -->
+          <input type="submit" value="Submit" id="submit">
+        </form>
+      </div>
       </div>
     </div>
     <!-- Footer -->
