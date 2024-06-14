@@ -18,6 +18,10 @@
     margin: 0.5em;
 }
 
+.HomeHeaderImgPC img{
+    border-radius: 1em;
+}
+
 .SelectComponentTeaserOption {
     display: flex;
     align-items: center;
