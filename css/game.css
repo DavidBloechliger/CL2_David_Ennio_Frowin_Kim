@@ -55,11 +55,11 @@
     position: absolute;
     top: 250px;
     left: 550px;
-    /* Start right outside the game area */
+    /* startet gleich vor dem game */
     background-image: url("https://i.ibb.co/2c7tV5z/21706916-circulation-barriere-dans-pixel-art-style-vectoriel-removebg-preview.png");
     background-size: cover;
     animation: rock 1.33s linear infinite paused;
-    /* Pause the animation initially */
+    /* Paussiert die animation direkt */
 }
 
 @keyframes rock {
