@@ -125,6 +125,7 @@
     max-width: 900px;
     margin-top: 7em;
     margin-bottom: 3em;
+    border-top: solid 1px #010d26;
 }
 
 .form-row {
@@ -185,4 +186,8 @@ textarea {
     border: 1px solid #010d26;
     border-radius: 8px;
     box-sizing: border-box;
+}
+
+form{
+    padding-top: 2em;
 }
