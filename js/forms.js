@@ -31,6 +31,11 @@ function emailforms() {
         isValid = false;
     }
 
+    if (message.value.length > 1000) {
+        errorMessage.innerHTML += 'Die Nachricht darf max. 1000 Zeichen lang sein.<br>';
+        isValid = false;
+    }
+
     return isValid;
 }
 
