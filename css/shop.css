@@ -5,7 +5,8 @@
     justify-content: space-between;
 }
 
-.product-row2 {
+.product-row2,
+.product-row-promotion {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -28,9 +29,15 @@
 }
 
 .ImgBackground {
-    background-color: bisque;
     padding: 1em;
+}
+
+.ImgBackground img {
     border-radius: 1em;
+}
+
+.ImgBackground img:hover {
+    transform: scale(1.1);
 }
 
 .PromotionPlus {
@@ -41,18 +48,18 @@
 
 .promotion {
     flex-grow: 1;
-    background-color: #ffffff;
     padding: 2em;
+    padding-top: 4em;
     margin: auto;
     max-width: 900px;
-    margin-top: 7em;
+    margin-top: 5em;
     text-align: center;
     margin-bottom: 3em;
+    border-top: solid 1px #010d26;
 }
 
 .allProducts {
     flex-grow: 1;
-    background-color: #ffffff;
     padding: 2em;
     margin: auto;
     max-width: 900px;
@@ -60,6 +67,10 @@
 
 .PromotionHeading {
     margin-bottom: 3em;
+}
+
+.contentColor {
+    background: linear-gradient( 180deg, rgba(105, 179, 204, 0.1) 0%, rgba(170, 1, 194, 0.1) 90%);
 }
 
 @media screen and (max-width: 700px) {
@@ -74,10 +85,14 @@
         padding-bottom: 0;
     }
     .promotion {
-        margin-top: 3em;
+        margin-top: 0em;
     }
     .promotionproduct {
-        width: calc(30% - 20px);
+        width: 50%;
         text-align: center;
+    }
+    .product-row-promotion {
+        flex-direction: column;
+        align-items: center;
     }
 }

@@ -5,37 +5,53 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="/images/PhoneFlow-Favicon.png" />
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/game.css" />
 </head>
 
 <body>
     <div class="header">
-        <div>
-            <a class="logo-header">PhoneFlow</a>
+        <div class="HeaderLogo">
+            <a href="/index.html"><img src="/images/logo.png" alt="logo" class="HeaderLogoImg" /></a>
         </div>
         <div class="nav">
             <div>
                 <a class="nav-point" href="./index.html">Home</a>
                 <a class="nav-point" href="./shop.html">Shop</a>
-                <a class="nav-point" href="./game.html">Gewinnspiel</a>
-            </div>
+                <a class="nav-point" id="active-nav" href="./game.html">Gewinnspiel</a
+          >
         </div>
+      </div>
     </div>
 
-    <!-- Content -->
-    <div class="">
-        <div class="ContentTop">
-            <div>
-                <h1>Gewinnspiel und Formular</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                    sanctus est Lorem ipsum dolor sit amet.
-                </p>
+    <div class="MobileNav">
+      <a href="/index.html"
+        ><img src="/images/logo.png" alt="logo" class="MobileNavActive"
+      /></a>
+                <div id="MobileNavLinks">
+                    <a href="/index.html">Home</a>
+                    <a href="/shop.html">Shop</a>
+                    <a href="/game.html" id="active-nav">Game</a>
+                </div>
+                <a href="javascript:void(0);" class="MobileNavIcon" onclick="myFunction()">
+                    <img style="height: 100%" src="/images/burger-menue.png" alt="" />
+                </a>
             </div>
-        </div>
 
-        <!--<div id="game-container">
+            <!-- Content -->
+            <div class="">
+                <div class="ContentTop">
+                    <div>
+                        <h1>Gewinnspiel und Formular</h1>
+                        <p>
+                            Nimm an unserem Gewinnspiel teil und sichere dir die Chance auf spannende Preise! Fülle einfach das Formular aus, um an der Verlosung teilzunehmen. Vergiss nicht, deine Kontaktdaten anzugeben, damit wir dich im Falle eines Gewinns erreichen können. Viel
+                            Glück!
+                        </p>
+                    </div>
+                </div>
+
+                <!--<div id="game-container">
             <div id="game">
                 <div id="game-start">
                     <div class="startScreenText">Klicke, um das Spiel zu starten.</div>
@@ -54,41 +70,46 @@
             </div>
         </div> -->
 
-        <div class="ContestForm">
-      <div>
-        <h2>Kontaktiere uns</h2>
-        <form action="">
-          <div class="form-row">
-            <div class="fname-form">
-              <label for="fname">Vorname</label>
-              <input type="text" id="fname" name="fname" placeholder="Vorname" minlength="3">
+                <div class="ContestForm">
+                    <div>
+                        <h2>Kontaktiere uns</h2>
+                        <form action="">
+                            <div class="form-row">
+                                <div class="fname-form">
+                                    <label for="fname">Vorname</label>
+                                    <input type="text" id="fname" name="fname" placeholder="Vorname" minlength="3" />
+                                </div>
+                                <div class="lname-form">
+                                    <label for="lname">Nachname</label>
+                                    <input type="text" id="lname" name="lname" placeholder="Nachname" minlength="3" />
+                                </div>
+                                <div class="email-form">
+                                    <label for="e-mail">E-Mail</label>
+                                    <input type="text" id="e-mail" name="e-mail" placeholder="E-Mail" minlength="8" />
+                                </div>
+                            </div>
+                            <div class="message-form">
+                                <label for="message">Nachricht (max. 1'000 Zeichen)</label>
+                                <textarea id="message" name="message" rows="4" cols="50" placeholder="Nachricht (max. 1'000 Zeichen)" maxlength="1000"></textarea
+              ><br /><br />
             </div>
-            <div class="lname-form">
-              <label for="lname">Nachname</label>
-              <input type="text" id="lname" name="lname" placeholder="Nachname" minlength="3">
-            </div>
-            <div class="email-form">
-              <label for="e-mail">E-Mail</label>
-              <input type="text" id="e-mail" name="e-mail" placeholder="E-Mail" minlength="8">
-            </div>
-          </div>
-          <div class="message-form">
-            <label for="message">Nachricht (max. 1'000 Zeichen)</label>
-            <textarea id="message" name="message" rows="4" cols="50" placeholder="Nachricht (max. 1'000 Zeichen)"
-              maxlength="1000"></textarea><br><br>
-          </div>
-          <div id="error-message" style="color: red;"></div> <!-- Hier wird die Fehlermeldung eingefügt -->
-          <input type="submit" value="Submit" id="submit">
-        </form>
-      </div>
+            <input type="submit" value="Submit" id="submit" class="button" />
+          </form>
+        </div>
       </div>
     </div>
     <!-- Footer -->
     <div class="footer">
-      <a class="logo-footer">PhoneFlow</a>
+      <p class="footerText">
+        Das ist ein Schulprojekt und keine reale Website. <br />
+        Erstellt von David, Ennio, Kim und Frowin
+      </p>
+      <a href="/index.html"
+        ><img src="/images/logo.png" alt="logo" class="FooterLogoImg"
+      /></a>
       <ul class="footer-links">
         <li><a href="https://www.instagram.com/">Instagram</a></li>
-        <li><a href="https://twitter.com/">Twitter</a></li>
+        <li><a href="https://pdfupload.io/docs/d3d45e89">Impressum</a></li>
         <li><a href="https://www.facebook.com/">Facebook</a></li>
       </ul>
     </div>

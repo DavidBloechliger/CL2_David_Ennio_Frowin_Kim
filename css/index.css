@@ -53,6 +53,7 @@
 
 .bestsellerImg {
     width: 100%;
+    border-radius: 1em;
 }
 
 .bestsellers {
@@ -88,6 +89,7 @@
     }
     .HomeHeader {
         flex-direction: column;
+        padding: 2em;
     }
 }
 
@@ -99,8 +101,14 @@
     .SelectComponentTeaserOption {
         width: 100%;
     }
+    .SelectComponentTeaser {
+        padding: 2em;
+    }
     .content {
         margin: 0;
+    }
+    .bestseller {
+        padding: 2em;
     }
 }
 

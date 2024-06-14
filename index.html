@@ -5,23 +5,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="/images/PhoneFlow-Favicon.png" />
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/index.css" />
 </head>
 
 <body>
     <div class="header">
-        <div>
-            <a class="logo-header">PhoneFlow</a>
+        <div class="HeaderLogo">
+            <a href="/index.html"><img src="/images/logo.png" alt="logo" class="HeaderLogoImg" /></a>
         </div>
         <div class="nav">
             <div>
-                <a class="nav-point" href="./index.html">Home</a>
+                <a class="nav-point" id="active-nav" href="./index.html">Home</a>
                 <a class="nav-point" href="./shop.html">Shop</a>
                 <a class="nav-point" href="./game.html">Gewinnspiel</a>
             </div>
         </div>
     </div>
+
+    <div class="MobileNav">
+        <a href="/index.html"><img src="/images/logo.png" alt="logo" class="MobileNavActive" /></a>
+        <div id="MobileNavLinks">
+            <a href="/index.html" id="active-nav">Home</a>
+            <a href="/shop.html">Shop</a>
+            <a href="/game.html">Game</a>
+        </div>
+        <a href="javascript:void(0);" class="MobileNavIcon" onclick="myFunction()">
+            <img style="height: 100%" src="/images/burger-menue.png" alt="" />
+        </a>
+    </div>
+
     <div class="HomeHeaderImgMobile">
         <img src="/images/header-image-index.jpg" alt="" />
     </div>
@@ -30,7 +44,8 @@
             <div class="HomeHeaderText">
                 <h1>Vorstellungen werden zur Realität</h1>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. In nobis aspernatur assumenda delectus. Odit pariatur quae odio culpa aperiam, necessitatibus, exercitationem quibusdam aliquam praesentium autem expedita? Porro in molestiae suscipit?
+                    Wähle dein Traum-Smartphone und installiere dein bevorzugtes Betriebssystem – sei es Apple, Samsung, Xiaomi oder ein anderes Top-Modell. Bei Phone Flow bestimmst du nicht nur das Betriebssystem, sondern auch Farbe und Speicherplatz. Gestalte dein Smartphone
+                    ganz nach deinen Wünschen. Willkommen bei der Zukunft der Smartphone-Anpassung.
                 </p>
                 <a href="/shop.html" class="button">Link Button</a>
             </div>
@@ -43,8 +58,7 @@
                 <div>
                     <h2>Wähle deine Komponenten</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        <br />Eligendi quisquam vitae cum, ipsa tempora eius reiciendis.
+                        Entdecke bei Phone Flow dein Traum-Smartphone. Wähle Marke, Betriebssystem, Farbe und Speicherplatz nach deinen Vorstellungen.
                     </p>
                 </div>
                 <div class="SelectComponentTeaserOptions">
@@ -66,19 +80,19 @@
 
         <div class="bestseller">
             <div>
-                <h2>Wähle deine Komponenten</h2>
+                <h2>Unsere Verkaufsschlager</h2>
             </div>
             <div class="bestsellers">
                 <div class="bestsellerProduct">
-                    <img class="bestsellerImg" src="./images/rock.png" alt="rock" />
+                    <img class="bestsellerImg" src="./images/Iphone15.jpg" alt="rock" />
                     <p>Iphone 12</p>
                 </div>
                 <div class="bestsellerProduct">
-                    <img class="bestsellerImg" src="./images/rock.png" alt="rock" />
+                    <img class="bestsellerImg" src="./images/Samsung23.jpg" alt="rock" />
                     <p>Samsung s23</p>
                 </div>
                 <div class="bestsellerProduct">
-                    <img class="bestsellerImg" src="./images/rock.png" alt="rock" />
+                    <img class="bestsellerImg" src="./images/Xiaomi12.jpg" alt="rock" />
                     <p>Xioami s2</p>
                 </div>
             </div>
@@ -90,7 +104,10 @@
 
     <!-- Footer -->
     <div class="footer">
-        <a class="logo-footer">PhoneFlow</a>
+        <p class="footerText">
+            Das ist ein Schulprojekt und keine reale Website. <br /> Erstellt von David, Ennio, Kim und Frowin
+        </p>
+        <a href="/index.html"><img src="/images/logo.png" alt="logo" class="FooterLogoImg" /></a>
         <ul class="footer-links">
             <li><a href="https://www.instagram.com/">Instagram</a></li>
             <li><a href="https://pdfupload.io/docs/d3d45e89">Impressum</a></li>
@@ -98,6 +115,16 @@
         </ul>
     </div>
     <script src="./js/index.js"></script>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("MobileNavLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+    </script>
 </body>
 
 </html>

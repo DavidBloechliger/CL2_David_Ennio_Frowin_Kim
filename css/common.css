@@ -15,7 +15,7 @@ body {
 
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 5em;
     color: #ffffff;
@@ -53,18 +53,37 @@ body {
     transition: color 0.3s;
 }
 
-.logo-header {
+#active-nav {
+    color: #aa01c2;
+}
+
+.HeaderLogo {
+    height: 100%;
+}
+
+.HeaderLogoImg {
     font-size: large;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    height: 100%;
 }
 
 .nav-point:hover,
-.logo-header:hover {
+.HeaderLogoImg:hover {
     color: #69b3cc;
 }
 
 .logo-footer {
     font-size: large;
     padding: 1em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footerText {
+    text-align: center;
 }
 
 h1 {
@@ -83,8 +102,7 @@ h2 {
 
 .ContentTop {
     flex-grow: 1;
-    background-color: #ffffff;
-    padding: 2em;
+    padding-top: 2em;
     margin: auto;
     max-width: 900px;
 }
@@ -102,6 +120,7 @@ h2 {
 
 .footer-links li a {
     color: #ffffff;
+    transition: color 0.3s;
 }
 
 .logo-footer:hover,
@@ -120,7 +139,7 @@ img {
 .button {
     background-color: #3b74a5;
     border: none;
-    color: white;
+    color: #ffffff;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -129,6 +148,23 @@ img {
     margin: 4px 2px;
     border-radius: 8px;
     cursor: pointer;
+    animation: pulse 2s infinite;
+    /* Hinzufügen der Animation */
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        /* Ursprüngliche Größe */
+    }
+    50% {
+        transform: scale(1.1);
+        /* Vergrößern auf 110% */
+    }
+    100% {
+        transform: scale(1);
+        /* Zurück zur ursprünglichen Größe */
+    }
 }
 
 .SelectComponentTeaserBG {
@@ -140,4 +176,81 @@ img {
     h1 {
         margin-top: 0;
     }
+    .ContentTop {
+        padding: 2em;
+    }
+    .header {
+        display: none;
+    }
+    .footer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 701px) {
+    .MobileNav {
+        display: none;
+    }
+}
+
+.FooterLogoImg {
+    height: 5em;
+}
+
+
+/*Mobile Navigation*/
+
+.mobile-container {
+    margin: auto;
+    height: 500px;
+    color: white;
+    border-radius: 10px;
+}
+
+.MobileNav {
+    overflow: hidden;
+    background-color: #010d26;
+    position: relative;
+}
+
+.MobileNav #MobileNavLinks {
+    display: none;
+}
+
+.MobileNav a {
+    color: #ffffff;
+    padding: 1em 2em;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+.MobileNav a.MobileNavIcon {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: +0.5em;
+}
+
+.MobileNav a:hover {
+    background-color: #69b3cc;
+    color: 010d26;
+}
+
+.MobileNavActive {
+    color: white;
+}
+
+.MobileNavIcon {
+    width: 2em;
+}
+
+.MobileNavActive {
+    font-size: large;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    height: 3em;
+    width: auto;
 }
