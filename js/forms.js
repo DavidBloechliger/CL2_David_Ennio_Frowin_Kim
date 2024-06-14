@@ -6,6 +6,7 @@ const emailField = document.getElementById("e-mail");
 const message = document.getElementById("message");
 const submit = document.getElementById("submit");
 const errorMessage = document.getElementById("error-message");
+const successMessage = document.getElementById("success-message");
 
 function isValidEmail(email) {
     return email.includes('@');
@@ -31,26 +32,30 @@ function emailforms() {
         isValid = false;
     }
 
-    if (message.value.length > 1000) {
-        errorMessage.innerHTML += 'Die Nachricht darf max. 1000 Zeichen lang sein.<br>';
-        isValid = false;
-    }
-
     return isValid;
 }
 
 submit.addEventListener("click", async (event) => {
     event.preventDefault();
-    onClickSubmit();
+    await onClickSubmit();
 });
-
 
 const onClickSubmit = async () => {
     const isValid = emailforms();
     if (isValid) {
         // Speichert die Daten in der Datenbank
         await databaseClient.insertInto("form_data", {
-            mail: emailforms.value,
+            mail: emailField.value,
+            fname: fname.value,
+            lname: lname.value,
+            message: message.value
         });
+
+        fname.value = "";
+        lname.value = "";
+        emailField.value = "";
+        message.value = "";
+
+        successMessage.innerHTML = "Vielen Dank für deine Teilnahme";
     }
-}
+};
