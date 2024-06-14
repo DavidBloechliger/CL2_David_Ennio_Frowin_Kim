@@ -55,7 +55,5 @@ const onClickSubmit = async () => {
         lname.value = "";
         emailField.value = "";
         message.value = "";
-
-        successMessage.innerHTML = "Vielen Dank für deine Teilnahme";
     }
 };
