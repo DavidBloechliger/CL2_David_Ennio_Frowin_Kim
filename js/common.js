@@ -1,1 +1,8 @@
-/* JS Code, der nur auf mehreren Pages verwendet wird */
+        function myFunction() {
+            var x = document.getElementById("MobileNavLinks");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
