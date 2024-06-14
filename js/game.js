@@ -1,89 +1,87 @@
-/* JS Code, der nur auf der Game Page verwendet wird */
+const dino = document.getElementById("dino");
+const rock = document.getElementById("rock");
+const score = document.getElementById("score");
+const startButton = document.getElementById("startButton");
+const game = document.getElementById("game");
+const backgroundAudio = new Audio(
+    "https://github.com/DavidBloechliger/CL2_David_Ennio_Frowin_Kim/raw/c600093cea403ef5d1e57c50b5bec50cd045974e/sounds/DrumGroove.mp3"
+);
+const jumpSound = new Audio(
+    "https://github.com/DavidBloechliger/CL2_David_Ennio_Frowin_Kim/raw/c600093cea403ef5d1e57c50b5bec50cd045974e/sounds/Jumping-Jump-2.mp3"
+);
 
-const dino = document.getElementById("game-dino");
-const rock = document.getElementById("game-rock");
-const score = document.getElementById("game-score");
-const gameBox = document.getElementById("game");
-const background = document.getElementById("game-background");
-const gameOver = document.getElementById("game-end");
-const winnerText = document.getElementById("game-winner");
-const startScreen = document.getElementById("game-start");
+// Stelle sicher, dass die Hintergrundmusik in einer Dauerschleife abgespielt wird
+backgroundAudio.loop = true;
 
-let gameLoopInterval = 0;
-const POINTS_TO_WIN = 100;
+let isGameRunning = false;
+let gameLoopInterval = null;
 
-const startGame = () => {
-  gameOver.classList.add("hidden");
-  background.classList.add("bg-animation");
-  rock.classList.add("rock-animation");
-  startScreen.classList.add("hidden");
-  resetScore();
-  startGameLoop();
-};
+function jump() {
+    if (isGameRunning && !dino.classList.contains("jump-animation")) {
+        dino.classList.add("jump-animation");
+        setTimeout(() => {
+            dino.classList.remove("jump-animation");
+            jumpSound.currentTime = 0; // Setze den Sprung-Soundeffekt auf den Anfang zurück
+            jumpSound.play(); // Spiele den Sprung-Soundeffekt ab
+        }, 500);
+    }
+}
 
-const resetScore = () => {
-  score.innerText = 0;
-};
-
-const jump = () => {
-  dino.classList.add("jump-animation");
-  setTimeout(() => {
-    dino.classList.remove("jump-animation");
-  }, 500);
-};
-
-const dieAnimation = () => {
-  dino.classList.add("dino-dies");
-  return new Promise((resolve) =>
-    setTimeout(() => {
-      dino.classList.remove("dino-dies");
-      resolve();
-    }, 500)
-  );
-};
-
-gameBox.addEventListener("click", () => {
-  if (!gameLoopInterval) {
-    startGame();
-  }
+document.addEventListener("keypress", (event) => {
+    if (isGameRunning) {
+        jump();
+    }
 });
 
-window.addEventListener("keypress", () => {
-  console.log("hello");
-  if (!dino.classList.contains("jump-animation")) {
-    console.log("juw");
-    jump();
-  }
+function startGameLoop() {
+    gameLoopInterval = setInterval(() => {
+        const dinoRect = dino.getBoundingClientRect();
+        const rockRect = rock.getBoundingClientRect();
+
+        score.innerText = parseInt(score.innerText) + 1;
+
+        if (rockRect.left < 0) {
+            // Zurücksetzen der Position des Hindernisses weiter links
+            rock.style.left = "550px"; // Hier die gewünschte Startposition in Pixeln eintragen
+        }
+
+        // Collision detection
+        if (
+            rockRect.left < dinoRect.right &&
+            rockRect.right > dinoRect.left &&
+            rockRect.top < dinoRect.bottom &&
+            rockRect.bottom > dinoRect.top
+        ) {
+            stopGame();
+        }
+    }, 50);
+}
+
+function startGame() {
+    isGameRunning = true;
+    backgroundAudio.currentTime = 0; // Setze die Hintergrundmusik auf den Anfang zurück
+    backgroundAudio.play(); // Starte die Hintergrundmusik
+    score.innerText = 0;
+    rock.style.left = "500px"; // Startposition des Hindernisses beim Start des Spiels
+    rock.style.animation = `rock 1.33s infinite linear`;
+    game.classList.add("running"); // Add the running class to start background animation
+    startGameLoop();
+    startButton.disabled = true;
+}
+
+function stopGame() {
+    isGameRunning = false;
+    backgroundAudio.pause(); // Stoppe die Hintergrundmusik
+    rock.style.animation = "none";
+    game.classList.remove("running"); // Remove the running class to stop background animation
+    clearInterval(gameLoopInterval);
+    startButton.disabled = false;
+}
+
+startButton.addEventListener("click", startGame);
+
+// Initialisieren beim Laden der Seite
+document.addEventListener("DOMContentLoaded", function() {
+    rock.style.animation = "none";
+    game.classList.remove("running");
 });
-
-const stopGame = async () => {
-  await dieAnimation();
-  background.classList.remove("bg-animation");
-  rock.classList.remove("rock-animation");
-  startScreen.classList.remove("hidden");
-  gameLoopInterval = clearInterval(gameLoopInterval);
-  gameOver.classList.remove("hidden");
-  if (Number(score.innerText) + 1 >= POINTS_TO_WIN) {
-    winnerText.classList.remove("hidden");
-  }
-};
-
-const startGameLoop = () => {
-  gameLoopInterval = window.setInterval(() => {
-    const dinoTop = parseInt(
-      window.getComputedStyle(dino).getPropertyValue("top")
-    );
-    const rockLeft = parseInt(
-      window.getComputedStyle(rock).getPropertyValue("left")
-    );
-    score.innerText = Number(score.innerText) + 1;
-    if (rockLeft < 0) {
-      rock.classList.add("hidden");
-    } else {
-      rock.classList.remove("hidden");
-    }
-    if (rockLeft < 50 && rockLeft > 0 && dinoTop > 150) {
-      stopGame();
-    }
-  }, 50);
-};

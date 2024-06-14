@@ -1,90 +1,65 @@
-/* CSS Code, den es für die Game Page braucht */
-
-
-/* Hilfsklasse */
-
-.hidden {
-    display: none;
-}
-
-
-/* Spiel-Container mit Beschreibung und Game-Over Text */
-
-.content-game {
-    min-height: 600px;
-}
-
-#game-container {
-    width: 600px;
-    background-color: blueviolet;
-    margin-bottom: 4em;
+#score {
+    text-align: center;
 }
 
 #game {
-    position: relative;
+    width: 600px;
     height: 300px;
-    cursor: pointer;
+    border: 2px solid black;
+    margin: auto;
+    position: relative;
 }
 
-.game-info {
-    margin-top: 12px;
-    margin-bottom: 12px;
-}
-
-#game-end {
-    margin-top: 12px;
-    margin-bottom: 12px;
-}
-
-
-/* Elemente im Spiel */
-
-#game-background {
+.background-layer {
     position: absolute;
     width: 600px;
     height: 300px;
-    background-image: url("../images/background.png");
     background-size: cover;
+    top: 0;
+    animation-play-state: paused;
+    /* Pause the animation initially */
 }
 
-.bg-animation {
-    animation: moveBg 10.33s linear infinite;
+#bg-layer-1 {
+    background-image: url("https://i.ibb.co/txtvSDC/Hintergrund-1.jpg");
+    animation: background-animation 20.33s linear infinite;
 }
 
-@keyframes moveBg {
+#bg-layer-2 {
+    background-image: url("https://i.ibb.co/0mG0sBR/Vordergrund-2.png");
+    animation: background-animation 4.33s linear infinite;
+}
+
+@keyframes background-animation {
     0% {
-        background-position: 0 0;
+        background-position: 0px 0px;
     }
     100% {
-        background-position: -600px 0;
+        background-position: -600px 0px;
     }
 }
 
-#game-dino {
-    height: 75px;
+#dino {
+    height: 175px;
     width: 75px;
-    top: 225px;
-    position: relative;
-    background-image: url("../images/dino.png");
+    position: absolute;
+    top: 125px;
+    left: 20px;
+    background-image: url("https://gifdb.com/images/high/chad-walking-pixel-art-5fmb40v2s3hc1ac1.gif");
     background-size: cover;
 }
 
-.dino-dies {
-    background-color: red;
-}
-
-#game-rock {
+#rock {
     width: 50px;
     height: 50px;
-    position: relative;
-    top: 175px;
+    position: absolute;
+    top: 250px;
     left: 550px;
-    background-image: url("../images/rock.png");
+    /* Start right outside the game area */
+    background-image: url("https://i.ibb.co/2c7tV5z/21706916-circulation-barriere-dans-pixel-art-style-vectoriel-removebg-preview.png");
     background-size: cover;
-}
-
-.rock-animation {
-    animation: rock 1.33s infinite;
+    animation: rock 1.33s linear infinite paused;
+    /* Pause the animation initially */
 }
 
 @keyframes rock {
@@ -92,7 +67,7 @@
         left: 550px;
     }
     100% {
-        left: -50px;
+        left: 0px;
     }
 }
 
@@ -102,41 +77,44 @@
 
 @keyframes jump {
     0% {
-        top: 225px;
+        top: 125px;
     }
     50% {
-        top: 75px;
+        top: -25px;
     }
     75% {
-        top: 75px;
+        top: -25px;
     }
     100% {
-        top: 225px;
+        top: 125px;
     }
 }
 
-#game-start {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    opacity: 0.7;
-    background: black;
-}
-
-.startScreenText {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
+#startButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #aa01c2;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-#game-score {
+#startButton:hover {
+    background-color: #8a1ba3;
+}
+
+#store {
     position: absolute;
-    top: 0;
-    right: 0;
-    margin: 12px;
+    width: 250px;
+    height: 250px;
+    right: -40px;
+    bottom: 0;
+    top: 85px;
+    background-image: url("https://i.ibb.co/r4vsyKD/Pixel-Store-edited.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .ContestForm {
