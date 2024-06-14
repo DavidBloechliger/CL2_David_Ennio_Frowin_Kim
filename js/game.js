@@ -27,7 +27,7 @@ function jump() {
     }
 }
 
-document.addEventListener("keypress", (event) => {
+game.addEventListener("click", (event) => {
     if (isGameRunning) {
         jump();
     }
